@@ -1,0 +1,77 @@
+<h1>Indicador Económico: {{indicador?.nombre}}</h1>
+
+  <div class="indicador-annio">
+    <h4>Buscar por año determinado para el indicador: {{indicador?.nombre}}</h4>
+    <hr>
+    <div class="input-group mb-3 mr-2">
+      <select class="custom-select" [formControl]="selectorAnnio">
+        <option selected value="" disabled>Año</option>
+        <option [value]="item" *ngFor="let item of anniosDeIndicadores">{{item}}</option>
+      </select>
+    </div>
+    <button class="btn btn-info w-50 mb-3"
+            *ngIf="valorIndicadorAnnioUnico.length > 0"
+            (click)="valorIndicadorAnnioUnico.length = 0">Ocultar tabla
+    </button>
+    <div>
+      <div class="indicador-annio-tablero" *ngIf="valorIndicadorAnnioUnico.length > 0">
+        <div class="indicador-annio-tablero-header">
+
+            <div class="indicador-annio-tablero-header-fecha">
+                <p>Fecha</p>
+            </div>
+            <div class="indicador-annio-tablero-header-valor">
+                <p>Valor</p>
+            </div>
+        </div>
+        <div *ngFor="let indicador of valorIndicadorAnnioUnico; let i = index"
+                class="indicador-annio-tablero-body"
+                role="button"
+                [ngClass]="{'background-gris': i % 2 !== 0, 'sin-border': valorIndicadorAnnioUnico.length - 1 === i}">
+    
+            <div class="indicador-annio-tablero-body-fecha">
+                <p>{{indicador.fecha | date}}</p>
+            </div>
+    
+    
+            <div class="indicador-annio-tablero-body-valor">
+                <p>
+                    <span *ngIf="indicador.unidad_medida === 'Porcentaje'">% {{indicador.valor}}</span>
+                    <span *ngIf="indicador.unidad_medida !== 'Porcentaje'">$ {{indicador.valor | number}}</span>
+                </p>
+            </div>
+        </div>
+    
+    
+      </div>
+    </div>
+  </div>
+
+
+  <div class="indicador-fecha">
+    <h4>Buscar por fecha determinada para el indicador: {{indicador?.nombre}}</h4>
+    <hr>
+    <div class="input-group mb-3 mr-5">
+      <select class="custom-select" [formControl]="selectorFecha">
+        <option selected value="" disabled>Fecha</option>
+        <option [value]="item" *ngFor="let item of indicadorFecha">{{item}}</option>
+      </select>
+    </div>
+    <div *ngIf="valorIndicadorFechaUnica !== null">
+      <h5 class="text-primary">
+        Valor: 
+        <span *ngIf="indicador.unidad_medida === 'porcentaje'">%</span>
+        <span *ngIf="indicador?.unidad_medida !== 'porcentaje'">$</span>
+        {{valorIndicadorFechaUnica}}
+      </h5>
+    </div>
+  </div>
+
+
+  <button class="btn btn-outline-primary d-flex"
+          (click)="redireccion('indicadores')">
+          <i class="material-icons ml-3">
+            chevron_left
+          </i> ATRÁS
+   
+  </button>

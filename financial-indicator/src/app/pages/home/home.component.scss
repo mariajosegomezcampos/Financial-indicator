@@ -1,0 +1,58 @@
+.indicadores {
+    &-titulo {
+
+    }
+
+    &-tablero {
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #688391;
+        
+        &-header, &-body {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            height: 56px;
+            align-items: center;
+            border-bottom: 1px solid #688391;
+            
+            & > div {
+                & > p {
+                    font-size: 16px;
+                    letter-spacing: 0.3px;
+                    margin-left: 15px;
+                    margin-bottom: 0;
+                }
+            }
+
+            &-nombre {
+                width: 30%;
+                display: flex;
+                & i {
+                    margin-left: 15px;
+                    cursor: pointer;
+                    color: #2196f3;
+                }
+            }
+
+            &-codigo {
+                width: 20%;;
+            }
+
+            &-unidad {
+                width: 20%;
+            }
+
+            &-valor, &-fecha {
+                width: 15%;
+            }
+        }
+
+        &-body:hover {
+            background-color: #0c1861 !important;
+            color: #fff;
+            transition: all .3s ease;
+
+        }
+    }
+}

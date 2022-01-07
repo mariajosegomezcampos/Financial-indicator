@@ -1,0 +1,58 @@
+<section>
+    <h1 class="indicadores-titulo">Indicadores Económicos</h1>
+    <p>Puedes hacer click sobre cualquiera de nuestros indicadores económicos para más informacion</p>
+    
+    <section class="indicadores-tablero">
+        <div class="indicadores-tablero-header">
+            <div class="indicadores-tablero-header-nombre">
+                <p>Nombre</p>
+                <i class="material-icons color-azul" *ngIf="!arrowUpward" (click)="ordernarPorNombre()">arrow_downward</i>
+                <i class="material-icons color-azul" *ngIf="arrowUpward" (click)="ordernarPorNombre()">arrow_upward</i>
+            </div>
+        
+            <div class="indicadores-tablero-header-codigo">
+                <p>Código</p>
+            </div>
+            <div class="indicadores-tablero-header-fecha">
+                <p>Fecha</p>
+            </div>
+            <div class="indicadores-tablero-header-unidad">
+                <p>Unidad de medida</p>
+            </div>
+            <div class="indicadores-tablero-header-valor">
+                <p>Valor</p>
+            </div>
+        </div>
+        <div *ngFor="let indicador of indicadores; let i = index"
+                class="indicadores-tablero-body"
+                role="button"
+                (click)="indicadorDetalle(indicador.codigo)"
+                [ngClass]="{'background-gris': i % 2 !== 0, 'sin-border': indicadores.length - 1 === i}">
+            <div class="indicadores-tablero-body-nombre">
+                <p>{{indicador.nombre}}</p>
+            </div>
+    
+            <div class="indicadores-tablero-body-codigo">
+                <p>{{indicador.codigo}}</p>
+            </div>
+    
+            <div class="indicadores-tablero-body-fecha">
+                <p>{{indicador.fecha | date}}</p>
+            </div>
+    
+            <div class="indicadores-tablero-body-unidad">
+                <p>{{indicador.unidad_medida}}</p>
+            </div>
+    
+            <div class="indicadores-tablero-body-valor">
+                <p>
+                    <span *ngIf="indicador.unidad_medida === 'Porcentaje'">% {{indicador.valor}}</span>
+                    <span *ngIf="indicador.unidad_medida !== 'Porcentaje'">$ {{indicador.valor | number}}</span>
+                </p>
+            </div>
+        </div>
+    
+    
+    </section>
+</section>
+

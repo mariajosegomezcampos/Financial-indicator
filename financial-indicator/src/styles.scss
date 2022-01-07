@@ -1,0 +1,55 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// ======== Utilities =========
+
+.background-gris {
+    background-color: #c8dfe2;
+}
+.background-azul {
+    background-color: #0c1861 !important;
+    color: #fff !important;
+}
+
+.color-azul {
+    color: #0c1861 !important;
+
+}
+
+.sin-border {
+    border-bottom: unset !important;
+}
+
+h1 {
+    font-family: 'Roboto Condensed';
+    font-weight: 600;
+}
+
+h5, h4, p {
+    font-family: 'Roboto';
+}
+.indicadores-tablero {
+    border: none!important;
+}
+
+.indicadores-tablero-header {
+    background-color: #0c1861d9;
+    color: #fff;
+}
+
+
+@media (max-width: 700px) {
+    section.indicadores-tablero p {
+        margin-left: 6px;
+        margin-bottom: 0;
+    }
+    section.indicadores-tablero p {
+        font-size: 12px!important;
+        margin-left: 6px;
+        margin-bottom: 0;
+         }
+         }
