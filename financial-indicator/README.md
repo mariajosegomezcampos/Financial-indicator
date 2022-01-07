@@ -11,7 +11,7 @@ En este proyecto se utilizaron varias herramientas de angular para su mejor func
 * Uso de los operadores de Rxjs para optimizar la velocidad a la hora de hacer llamadas a la api.
 * Se uso scss para agregar estilos bajo la metodología BEM.
 * Se uso el Sweet Alert para los loading en caso de que la api se tarde en responder.
-* Se uso ng2-charts para el manejo de las gráficas.
+
 
 
 ## Instalar los paquetes de la libreria
