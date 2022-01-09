@@ -1,13 +1,13 @@
 <section>
     <h1 class="indicadores-titulo">Indicadores Económicos</h1>
-    <p>Puedes hacer click sobre cualquiera de nuestros indicadores económicos para más informacion</p>
+    <p class="font-weight-bold">Puedes hacer click sobre cualquiera de nuestros indicadores económicos para más informacion</p>
     
     <section class="indicadores-tablero">
         <div class="indicadores-tablero-header">
             <div class="indicadores-tablero-header-nombre">
                 <p>Nombre</p>
-                <i class="material-icons color-azul" *ngIf="!arrowUpward" (click)="ordernarPorNombre()">arrow_downward</i>
-                <i class="material-icons color-azul" *ngIf="arrowUpward" (click)="ordernarPorNombre()">arrow_upward</i>
+                <i class="material-icons color-blanco" *ngIf="!arrowUpward" (click)="ordernarPorNombre()">arrow_downward</i>
+                <i class="material-icons color-blanco" *ngIf="arrowUpward" (click)="ordernarPorNombre()">arrow_upward</i>
             </div>
         
             <div class="indicadores-tablero-header-codigo">
